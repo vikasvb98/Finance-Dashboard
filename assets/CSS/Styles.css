@@ -1,14 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* ======Google Fonts====== */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Merriweather&family=Noto+Sans:wght@300;400;500&display=swap');
 
-/* ======Root====== */
+/* ======VARIABLES CSS====== */
 :root {
+    --header-height: 3.2rem;
+    --header-width: 2rem;
     --bg-color: rgba(252, 252, 253, 1);
     --bg-color-grey: rgba(59, 61, 60, 0.08);
     --base-color: rgb(62,46,223);
@@ -26,3 +22,148 @@
     --z-tooltip: 10;
     --z-fixed: 100;
 }
+@media screen and (min-width: 1124px) {
+    :root {
+        --biggest-font-size: 1rem;
+        --big-font-size: .8rem;
+        --normal-font-size: .7rem;
+        --small-font-size: 0.6rem;
+        --smaller-font-size: .5rem;
+    }
+  }
+
+/*======BASE======*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* transition: .4s; For animation dark mode */
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*====== REUSABLE CSS CLASSES ======*/
+.container {
+    max-width: 344px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  /*====== HEADER & NAV ======*/
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+  }
+  .navbar{
+    position: fixed;
+    width: 70px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px ;
+    row-gap: 2px;
+    /* background-color: aquamarine; */
+  }
+  .nav-icons{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+  .navbar a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: auto;
+    color: rgb(103, 107, 107);
+    font-size: 1.2rem;
+  }
+  .navbar a:hover{
+    background-color: var(--base-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+  }
+  .logo{
+    mix-blend-mode: multiply;
+    width: 20px;
+  }
+  .nav-menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+
+
+@media screen  and (max-width: 1023px){
+
+    .navbar{
+        position: fixed;
+        background-color: var(--bg-color);
+        box-shadow: 0 4px 12px rgb(224, 215, 215);
+        width: 100%;
+        height: var(--header-height);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        margin: 0 auto;
+        padding: 1.25rem 2.8rem;
+        border-radius: .5rem;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: row;
+        column-gap: 60px;
+    }
+    .notification-icon{
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+    .navbar img,
+    .logout-icon{
+        display: none;
+    }
+}
+/* .profile-section{
+    width: 300px;
+    padding: 10px 20px;
+    margin: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-section img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+} */
+
+
