@@ -11,9 +11,9 @@
     --text-color: rgba(0, 0, 0, 0.8);
     --text-color-light: rgba(103, 94, 99, 0.8);
     --body-font: 'Merriweather', sans;
-    --biggest-font-size: 1rem;
-    --big-font-size: .8rem;
-    --normal-font-size: .7rem;
+    --biggest-font-size: 2.5rem;
+    --big-font-size: 1.5rem;
+    --normal-font-size: 1rem;
     --small-font-size: 0.6rem;
     --smaller-font-size: .5rem;
     --font-regular: 400;
@@ -49,6 +49,21 @@
     color: var(--text-color);
     /* transition: .4s; For animation dark mode */
   }
+  h1{
+    font-size: var(--biggest-font-size);
+  }
+  h2{
+    font-size: var(--big-font-size);
+  }
+  h3{
+    font-size: var(--normal-font-size);
+  }
+  h4{
+    font-size: var(--small-font-size);
+  }
+  p{
+    font-size: var(--smaller-font-size);
+  }  
   
   a {
     text-decoration: none;
@@ -77,6 +92,7 @@
     position: fixed;
     width: 70px;
     height: 100vh;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -87,6 +103,7 @@
   .nav-icons{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     row-gap: 25px;
   }
   .navbar a{
@@ -103,14 +120,12 @@
     color: var(--bg-color);
     border-radius: 5px;
   }
-  .logo{
-    mix-blend-mode: multiply;
-    width: 20px;
-  }
   .nav-menu{
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 30px;
   }
 
@@ -126,8 +141,9 @@
         height: var(--header-height);
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        flex-wrap: nowrap;
         bottom: 0;
         left: 0;
         right: 0;
@@ -136,6 +152,9 @@
         padding: 1.25rem 2.8rem;
         border-radius: .5rem;
     }
+    .search-box a{
+        margin-bottom: 1.5rem;
+    }
     .nav-menu{
         display: flex;
         flex-direction: row;
@@ -143,6 +162,7 @@
     }
     .notification-icon{
         position: fixed;
+        padding: 10px 10px;
         top: 10px;
         right: 10px;
         z-index: 1000;
@@ -152,18 +172,56 @@
         display: none;
     }
 }
-/* .profile-section{
-    width: 300px;
+/* ======Main====== */
+.dashboard{
+    background-color: var(--bg-color); 
     padding: 10px 20px;
-    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+.profile-section{
+    width: 25rem;
+    padding-top: 5rem;
+    padding-left: 2.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    column-gap: 2rem;
 }
 .profile-section img {
-    height: 90px;
-    width: 90px;
+    height: 80px;
+    width: 80px;
     border-radius: 50px;
-} */
-
-
+}
+.balance-dashboard{
+    height: 20rem;
+    padding-left: 2.5rem;
+    padding-top: 2rem;
+    background-color: var(--bg-color-grey);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;    
+}
+.balance-box{
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-btn{
+    background-color: var(--base-color);
+    color: var(--bg-color);
+    font-size: var(--normal-font-size);
+    width: 20rem;
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 110px;
+}
+.recent-transactions{
+    height: 20rem;
+    padding-left: 2.5rem;
+    padding-top: 2rem;
+    background-color: var(--bg-color-grey);
+    border-radius: 2rem;
+}
