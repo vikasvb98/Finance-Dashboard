@@ -3,8 +3,8 @@
 
 /* ======VARIABLES CSS====== */
 :root {
-    --header-height: 3.2rem;
-    --header-width: 2rem;
+    --header-height: 5rem;
+    --header-width: 2.5rem;
     --bg-color: rgba(252, 252, 253, 1);
     --bg-color-grey: rgba(59, 61, 60, 0.08);
     --base-color: rgb(62,46,223);
@@ -25,8 +25,8 @@
 @media screen and (min-width: 1124px) {
     :root {
         --biggest-font-size: 1rem;
-        --big-font-size: .8rem;
-        --normal-font-size: .7rem;
+        --big-font-size: 2rem;
+        --normal-font-size: 2rem;
         --small-font-size: 0.6rem;
         --smaller-font-size: .5rem;
     }
@@ -62,7 +62,8 @@
     font-size: var(--small-font-size);
   }
   p{
-    font-size: var(--smaller-font-size);
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
   }  
   
   a {
@@ -90,7 +91,7 @@
   }
   .navbar{
     position: fixed;
-    width: 70px;
+    width: var(--header-width);
     height: 100vh;
     background-color: var(--bg-color);
     display: flex;
@@ -173,17 +174,19 @@
     }
 }
 /* ======Main====== */
+.home{
+  padding: 10px 30px;
+}
 .dashboard{
-    background-color: var(--bg-color); 
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2.5rem;
+  max-width: 25rem;
+  background-color: var(--bg-color); 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .profile-section{
-    width: 25rem;
-    padding-top: 5rem;
-    padding-left: 2.5rem;
+    margin-top: 5rem;
+    max-height: 10rem;
     display: flex;
     align-items: center;
     column-gap: 2rem;
@@ -194,9 +197,7 @@
     border-radius: 50px;
 }
 .balance-dashboard{
-    height: 20rem;
-    padding-left: 2.5rem;
-    padding-top: 2rem;
+    padding: 2rem 2.5rem;
     background-color: var(--bg-color-grey);
     border-radius: 2rem;
     display: flex;
@@ -212,16 +213,62 @@
     background-color: var(--base-color);
     color: var(--bg-color);
     font-size: var(--normal-font-size);
-    width: 20rem;
     height: 4rem;
     border: none;
     border-radius: 10px;
     padding: 20px 110px;
 }
 .recent-transactions{
-    height: 20rem;
-    padding-left: 2.5rem;
-    padding-top: 2rem;
+    padding: 2.5rem 2rem;
     background-color: var(--bg-color-grey);
     border-radius: 2rem;
+}
+.transactions div{
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bg-color-grey);
+}
+.transactions{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.chart-section{
+  padding: 10px 30px;
+}
+.retirement-income{
+    padding: 2rem 2rem;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.starting-year{
+    width: 80%;
+    gap: 1rem;
+}
+.starting-year h3{
+    color: var(--base-color);
+}
+.my-goal{
+  width: 60%;
+  border-bottom: 1px solid var(--base-color);
+}
+.goal-achieved{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.goal-achieved div{
+  width: 7rem;
+  border-bottom: 1px solid var(--base-color); 
+}
+.chart{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem ;
+}
+.myChart{
+  max-width: 40rem;
 }

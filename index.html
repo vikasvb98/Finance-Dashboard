@@ -35,8 +35,9 @@
 
     <!-- ======Main====== -->
     <main>
-        <section>
+        <section class="home">
             <div class="dashboard">
+
                 <div class="profile-section">
                     <img src="./assets/img/profile.jpg" alt="img">
                     <div>
@@ -68,9 +69,50 @@
                 </div>
                 <div class="recent-transactions">
                     <h3>Recent Transactions</h3>
-                    
+                    <div class="transactions">
+                        <div>
+                            <p>2020-08-07</p>
+                            <h3>Withdrawal Transfer to Bank - XXXX11</h3>
+                        </div>
+                        <div>
+                            <p>2020-07-21</p>
+                            <h3>Withdrawal Transfer to Bank - XXXX11</h3>
+                        </div>
+                        <div>
+                            <p>2020-07-16</p>
+                            <h3>Withdrawal Transfer to Bank - XXXX11</h3>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+        </section>
+        <section class="chart-section">
+            <div class="retirement-income">
+                <div class="starting-year">
+                    <h3>Retirement Income</h3>
+                    <h2>Starting year 2056</h2>
+                </div>
+                <div class="my-goal">
+                    <h1>$ 300,000</h1>
+                    <p>My Goal</p>
+                </div>
+                <div class="goal-achieved">
+                    <div>
+                        <h2>59%</h2>
+                        <p>Goal Achieved</p>
+                    </div>
+                    <div>
+                        <h2>K 300</h2>
+                        <p>Est. Monthly Income</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <h3>Contribution Overtime</h3>
+                <canvas class="myChart" id="myChart"></canvas>
+            </div>
+
         </section>
     </main>
 
@@ -78,5 +120,7 @@
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/JS/main.js"></script>
 </body>
 </html>
