@@ -61,3 +61,47 @@ new Chart(ctx, {
     },
   }
 });
+
+// Progress Bar
+// let circularProgress = document.querySelector(".circular-progress"),
+//     progressValue = document.querySelector(".progress-value");
+
+// let progressStartValue = 0,
+//     progressEndValue = 78,
+//     speed = 100;
+
+// let progress = setInterval(()=>{
+//     progressStartValue++;
+
+//     progressValue.textContent = `${progressStartValue}%`
+//     circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+
+//     if(progressStartValue == progressEndValue){
+//         clearInterval(progress);
+//     }
+// }, speed); 
+
+function createCircularProgress(progressElement, endValue) {
+    let progressStartValue = 0;
+    let speed = 100;
+
+    let progress = setInterval(() => {
+        progressStartValue++;
+
+        progressElement.querySelector('.progress-value').textContent = `${progressStartValue}%`;
+        progressElement.style.background = `conic-gradient(rgb(62,46,223) ${progressStartValue * 3.6}deg, #ededed 0deg)`;
+
+        if (progressStartValue === endValue) {
+            clearInterval(progress);
+        }
+    }, speed);
+}
+
+let circularProgress1 = document.getElementById("progress1");
+createCircularProgress(circularProgress1, 78);
+
+let circularProgress2 = document.getElementById("progress2");
+createCircularProgress(circularProgress2, 95);
+
+let circularProgress3 = document.getElementById("progress3");
+createCircularProgress(circularProgress3, 59);

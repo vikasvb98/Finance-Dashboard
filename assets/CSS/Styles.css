@@ -272,3 +272,74 @@
 .myChart{
   max-width: 40rem;
 }
+.peers-container{
+  display: flex;
+  flex-direction: column;
+}
+.peers-content{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: .6rem;
+}
+.peers-progressbar{
+  display: flex;
+  flex-direction: column;
+}
+.peers-dropdown{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+.dropdown{
+  padding: 1rem 0;
+  min-width: 10rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--bg-color-grey);
+}
+.dropdown select{
+  border: none;
+  background-color: var(--bg-color);
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+.progress-bar{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.progress-container{
+  max-width: 40rem;
+  padding: 30px 0;
+  border-radius: 8px;
+  background: #ffffff;
+  align-items: center;
+}
+.circular-progress{
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background: conic-gradient(var(--base-color) 3.6deg , #ededed 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circular-progress::before{
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.progress-value{
+  position: relative;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.progress-text{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+
+}
