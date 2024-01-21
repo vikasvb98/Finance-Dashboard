@@ -61,25 +61,7 @@ new Chart(ctx, {
     },
   }
 });
-
-// Progress Bar
-// let circularProgress = document.querySelector(".circular-progress"),
-//     progressValue = document.querySelector(".progress-value");
-
-// let progressStartValue = 0,
-//     progressEndValue = 78,
-//     speed = 100;
-
-// let progress = setInterval(()=>{
-//     progressStartValue++;
-
-//     progressValue.textContent = `${progressStartValue}%`
-//     circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
-
-//     if(progressStartValue == progressEndValue){
-//         clearInterval(progress);
-//     }
-// }, speed); 
+ 
 
 function createCircularProgress(progressElement, endValue) {
     let progressStartValue = 0;
@@ -105,3 +87,38 @@ createCircularProgress(circularProgress2, 95);
 
 let circularProgress3 = document.getElementById("progress3");
 createCircularProgress(circularProgress3, 59);
+
+// range
+
+// const slider = document.querySelector(".slider")
+// const sliderValue = document.querySelector(".slide-btn")
+
+// slider.addEventListener("input", (event) => {
+//   const tempSliderValue = event.target.value; 
+  
+//   sliderValue.textContent = tempSliderValue;
+  
+//   const progress = (tempSliderValue / slider.max) * 100;
+ 
+//   slider.style.background = `linear-gradient(to right, #f50 ${progress}%, #ccc ${progress}%)`;
+// })
+
+// Get all sliders on the page
+const sliders = document.querySelectorAll(".slider");
+const sliderValues = document.querySelectorAll(".slide-btn");
+
+sliders.forEach((slider, index) => {
+  // Add event listener to each slider
+  slider.addEventListener("input", (event) => {
+    const tempSliderValue = event.target.value; 
+
+    // Update the corresponding slider value span
+    sliderValues[index].textContent = tempSliderValue;
+
+    // Calculate the progress for the current slider
+    const progress = (tempSliderValue / slider.max) * 100;
+
+    // Update the background gradient for the current slider
+    slider.style.background = `linear-gradient(to right, rgb(177, 170, 240) ${progress}%, #ccc ${progress}%)`;
+  });
+});
