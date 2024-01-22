@@ -1,9 +1,9 @@
 /* ======Google Fonts====== */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Merriweather&family=Noto+Sans:wght@300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&family=Merriweather&family=Noto+Sans:wght@300;400;500&family=Roboto:wght@400;500;700&display=swap');
 /* ======VARIABLES CSS====== */
 :root {
-    --header-height: 5rem;
+    --header-height: 4rem;
     --header-width: 2.5rem;
     --bg-color: rgba(252, 252, 253, 1);
     --bg-color-grey: rgba(59, 61, 60, 0.08);
@@ -11,6 +11,7 @@
     --text-color: rgba(0, 0, 0, 0.8);
     --text-color-light: rgba(103, 94, 99, 0.8);
     --body-font: 'Merriweather', sans;
+    --number-font: 'Roboto', sans-serif;
     --biggest-font-size: 2.5rem;
     --big-font-size: 1.5rem;
     --normal-font-size: 1rem;
@@ -24,10 +25,10 @@
 }
 @media screen and (min-width: 1124px) {
     :root {
-        --biggest-font-size: 1rem;
-        --big-font-size: 2rem;
-        --normal-font-size: 2rem;
-        --small-font-size: 0.6rem;
+        --biggest-font-size: 2rem;
+        --big-font-size: 1.4rem;
+        --normal-font-size: .9rem;
+        --small-font-size: .7rem;
         --smaller-font-size: .5rem;
     }
   }
@@ -73,6 +74,9 @@
   img {
     max-width: 100%;
     height: auto;
+  }
+  .number-font{
+    font-family: var(--number-font);
   }
 
   /*====== REUSABLE CSS CLASSES ======*/
@@ -129,6 +133,18 @@
     justify-content: flex-start;
     gap: 30px;
   }
+  .notification-icon{
+    position: relative;
+  }
+  .notification-dot {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(141, 201, 224);
+    border-radius: 50%;
+}
 
 
 
@@ -159,7 +175,7 @@
     .nav-menu{
         display: flex;
         flex-direction: row;
-        column-gap: 60px;
+        justify-content: space-between;
     }
     .notification-icon{
         position: fixed;
@@ -168,6 +184,15 @@
         right: 10px;
         z-index: 1000;
     }
+    .notification-dot {
+      position: absolute;
+      top: 0;
+      left:1.8rem;
+      width: 8px;
+      height: 8px;
+      background-color: rgb(141, 201, 224);
+      border-radius: 50%;
+  }
     .navbar img,
     .logout-icon{
         display: none;
@@ -202,7 +227,7 @@
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;    
+    row-gap: 2rem;    
 }
 .balance-box{
     width: 15rem;
@@ -216,7 +241,7 @@
     height: 4rem;
     border: none;
     border-radius: 10px;
-    padding: 20px 110px;
+    padding: 0 80px;
 }
 .recent-transactions{
     padding: 2.5rem 2rem;
@@ -246,14 +271,15 @@
 }
 .starting-year{
     width: 80%;
-    gap: 1rem;
+    display: grid;
+    gap: .7rem;
 }
 .starting-year h3{
     color: var(--base-color);
 }
 .my-goal{
   width: 60%;
-  border-bottom: 1px solid var(--base-color);
+  border-bottom: 1px solid rgb(154, 170, 223);
 }
 .goal-achieved{
     width: 80%;
@@ -262,12 +288,12 @@
 }
 .goal-achieved div{
   width: 7rem;
-  border-bottom: 1px solid var(--base-color); 
+  border-bottom: .6px solid rgb(154, 170, 223); 
 }
 .chart{
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem ;
+  padding: 1rem 1rem ;
 }
 .myChart{
   max-width: 40rem;
@@ -280,6 +306,9 @@
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: .6rem;
+}
+.peers-content h4{
+  font-weight: var(--font-regular);
 }
 .peers-progressbar{
   display: flex;
@@ -301,6 +330,7 @@
   border: none;
   background-color: var(--bg-color);
   font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
   color: var(--text-color-light);
 }
 .progress-bar{
@@ -350,17 +380,19 @@
 }
 .interest-calcultor{
   height: 60%;
-  padding: 10px 30px;
+  padding: 10px 10px;
 }
 .interest-container{
   display: grid;
   grid-template-rows: repeat(6, 1fr);
-  gap: 1rem;
-  max-width: 25rem;
-  min-height: 15rem;
+  /* gap: 1rem; */
+  /* max-width: 25rem; */
   background-color: var(--bg-color-grey);
   border-radius: 3rem;
-  padding: 20px 30px;
+  padding: 10px 25px;
+}
+.retirement-strategy{
+  padding: 20px 5px;
 }
 .range-slider{
   display: flex;
@@ -369,7 +401,6 @@
 }
 .slider-container{
   width: 100%;
-  flex-wrap: nowrap;
 }
 .slider{
   -webkit-appearance: none;
@@ -409,7 +440,29 @@
   height: 3rem;
   width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: var(--base-color);
   color: white;
+}
+@media screen and (min-width: 1124px){
+  main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 3rem;
+  }
+  .home{
+    background-color: var(--bg-color-grey);
+  }
+ .dashboard{
+    background-color: var(--bg-color-grey);
+  }
+  /* .profile-section{
+    background-color: var(--bg-color-grey);
+  }
+  .balance-dashboard{
+    background-color: var(--bg-color-grey);
+  }
+  .recent-transactions{
+    background-color: var(--bg-color-grey);
+  }  */
 }
