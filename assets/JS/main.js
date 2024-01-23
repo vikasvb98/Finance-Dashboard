@@ -42,7 +42,6 @@ new Chart(ctx, {
         ticks: {
             maxTicksLimit: 5,
             callback: ((context, index) => {
-                console.log(context)
                 let response;
                 if (context === 100){
                     response = '$ 100'

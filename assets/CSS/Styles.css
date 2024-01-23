@@ -25,9 +25,9 @@
 }
 @media screen and (min-width: 1124px) {
     :root {
-        --biggest-font-size: 2rem;
-        --big-font-size: 1.4rem;
-        --normal-font-size: .9rem;
+        --biggest-font-size: 1.8rem;
+        --big-font-size: 1.2rem;
+        --normal-font-size: .8rem;
         --small-font-size: .7rem;
         --smaller-font-size: .5rem;
     }
@@ -204,7 +204,7 @@
 }
 .dashboard{
   max-width: 25rem;
-  background-color: var(--bg-color); 
+  /* background-color: var(--bg-color);  */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -230,7 +230,7 @@
     row-gap: 2rem;    
 }
 .balance-box{
-    width: 15rem;
+    min-width: 15rem;
     display: flex;
     justify-content: space-between;
 }
@@ -276,6 +276,11 @@
 }
 .starting-year h3{
     color: var(--base-color);
+}
+.goal-dashboard{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
 }
 .my-goal{
   width: 60%;
@@ -347,7 +352,7 @@
   max-width: 40rem;
   padding: 30px 0;
   border-radius: 8px;
-  background: #ffffff;
+  background: unset;
   align-items: center;
 }
 .circular-progress{
@@ -448,14 +453,61 @@
   main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 1rem 3rem;
+    padding: 0 3rem;
   }
   .home{
     background-color: var(--bg-color-grey);
+    padding: 10px 10px;
   }
- .dashboard{
-    background-color: var(--bg-color-grey);
+  .dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: .1rem;
   }
+  .profile-section{
+    margin-top: 1rem;
+  }
+  .balance-dashboard,
+  .recent-transactions{
+    background-color: unset;
+    padding: 1rem 1.5rem;
+  }
+  .balance-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .dashboard-btn{
+    width: 8rem;
+    height: 3rem;
+    padding: 0 1rem;
+  }
+  .goal-dashboard{
+    display: flex;
+    column-gap: 4rem;
+  }
+  .goal-achieved div{
+    width: 8rem;
+  }
+  .goal-achieved{
+    display: flex;
+    column-gap: 2rem;
+  }
+  .peers-content h3{
+    font-size: var(--big-font-size);
+  }
+  .peers-progressbar{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .peers-dropdown {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: .1rem;
+
+}
+
   /* .profile-section{
     background-color: var(--bg-color-grey);
   }
